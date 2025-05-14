@@ -1,55 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BLM Retreat Center - Employee Registration</title>
-  <link rel="stylesheet" href="blm_theme.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BLM Retreat Centre</title>
+  <link rel="stylesheet" href="css/common.css">
+  <style>
+    .slider {
+      width: 100%;
+      max-height: 400px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slider img {
+      width: 100%;
+      height: auto;
+      display: none;
+    }
+
+    .slider img.active {
+      display: block;
+    }
+
+    .login-box {
+      max-width: 400px;
+      margin: 20px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+      text-align: center;
+      margin: 20px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #003366;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-  <img src="images/blm-logo.jpg" alt="BLM Retreat Centre Logo" class="logo">
-    <h1>BLM Retreat Center</h1>
-    <h2>Employee Registration Form</h2>
 
-    <form id="employeeForm">
-      <label>Name: <input type="text" name="name" required></label>
-      <label>Role: <input type="text" name="role" required></label>
-      <label>Date of Joining: <input type="date" name="dateOfJoining" required></label>
-      <label>Address: <input type="text" name="address"></label>
-      <label>Contact Person: <input type="text" name="contactPerson"></label>
-      <label>Birthday: <input type="date" name="birthday"></label>
-      <label>Wedding Date: <input type="date" name="weddingDate"></label>
-      <label>Special Date: <input type="date" name="specialDate"></label>
-      <label>Insurance: <input type="text" name="insurance"></label>
-      <label>Insurance Year: <input type="text" name="insuranceYear"></label>
-      <label>Salary: <input type="text" name="salary"></label>
-      <label>Aadhar Number: <input type="text" name="aadhar"></label>
-      <label>PAN Card: <input type="text" name="pancard"></label>
-      <label>Photo (URL): <input type="text" name="photo"></label>
-      <label>Special Note: <textarea name="specialNote" rows="4"></textarea></label>
+  <header class="header">
+    <img src="images/blm-logo.png" alt="BLM Logo" style="height: 60px;">
+    <h1>BLM Retreat Centre</h1>
+  </header>
 
-      <button type="submit">Submit</button>
+  <div class="slider" id="slider">
+    <img src="images/img1.jpg" class="active">
+    <img src="images/img2.jpg">
+    <img src="images/img3.jpg">
+    <img src="images/img4.jpg">
+    <img src="images/img5.jpg">
+  </div>
+
+  <nav>
+    <a href="login.html">Admin Login</a>
+    <a href="staff.html">Staffs</a>
+    <a href="volunteers.html">Volunteers</a>
+    <a href="chaPEl.html">Chapels</a>
+    <a href="prayers.html">Prayers</a>
+    <a href="priest.html">Priests</a>
+    <a href="intercession.html">Intercession</a>
+    <a href="newsretreat.html">Retreat Feeds</a>
+    <a href="sponsers.html">Sponsers</a>
+  </nav>
+
+  <div class="login-box">
+    <h2>Admin Login</h2>
+    <form onsubmit="return login(event)">
+      <label for="username">Username:</label>
+      <input type="text" id="username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" required>
+
+      <button type="submit">Login</button>
     </form>
+    <p id="login-message" style="color: red;"></p>
   </div>
 
   <script>
-    document.getElementById('employeeForm').addEventListener('submit', async function (e) {
-      e.preventDefault();
-      const formData = Object.fromEntries(new FormData(this).entries());
-      const response = await fetch('http://localhost:3000/api/employees', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
+    // Login function
+    function login(event) {
+      event.preventDefault();
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+      const message = document.getElementById('login-message');
 
-      if (response.ok) {
-        alert('Employee registered successfully!');
-        this.reset();
+      if (user === 'admin' && pass === 'admin@blm2025') {
+        message.style.color = 'green';
+        message.textContent = 'Login successful!';
       } else {
-        alert('Error occurred while saving!');
+        message.style.color = 'red';
+        message.textContent = 'Invalid credentials.';
       }
-    });
+    }
+
+    // Image slider
+    let current = 0;
+    const slides = document.querySelectorAll('#slider img');
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 5000);
   </script>
+
 </body>
 </html>
