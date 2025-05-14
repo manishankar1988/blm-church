@@ -1,110 +1,133 @@
-/* BLM Retreat Centre - Common Theme CSS */
+/* common.css */
 
-/* Reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-/* Body Styling */
+/* Theme Colors and Base Reset */
 body {
-  background-color: #f5f7fa;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f9ff;
   color: #003366;
-  line-height: 1.6;
-  padding: 20px;
 }
 
-/* Logo */
-.logo-container {
+/* Header and Logo */
+.header {
+  background-color: #003366;
+  padding: 10px 20px;
   text-align: center;
-  margin-bottom: 30px;
-}
-.logo-container img {
-  max-width: 160px;
-  height: auto;
+  color: white;
 }
 
-/* Main Form Container */
+.header img {
+  max-height: 60px;
+  vertical-align: middle;
+}
+
+/* Navigation */
+nav {
+  text-align: center;
+  margin: 20px 0;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #003366;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #0055aa;
+}
+
+/* Form Container */
 .container {
   max-width: 600px;
-  background: #ffffff;
-  margin: 0 auto;
-  padding: 30px 25px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
-
-/* Form Headings */
-.container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #003366;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Input Fields */
 input[type="text"],
 input[type="email"],
-input[type="tel"],
-input[type="date"],
 input[type="file"],
+input[type="date"],
+input[type="password"],
 select,
 textarea {
   width: 100%;
-  padding: 12px 15px;
-  margin: 10px 0 20px;
+  padding: 10px 12px;
+  margin-bottom: 15px;
   border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  transition: all 0.3s ease;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 14px;
+  transition: border 0.3s, box-shadow 0.3s;
 }
 
 input:focus,
-textarea:focus,
-select:focus {
+select:focus,
+textarea:focus {
+  border-color: #003366;
+  box-shadow: 0 0 5px rgba(0, 51, 102, 0.3);
   outline: none;
-  border-color: #00509e;
-  background-color: #fff;
-  box-shadow: 0 0 5px rgba(0, 80, 158, 0.3);
 }
 
-/* Labels */
-label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: bold;
-  color: #003366;
-}
-
-/* Buttons */
-button,
-input[type="submit"] {
+/* Submit Button */
+button, input[type="submit"] {
   background-color: #003366;
   color: white;
   border: none;
-  padding: 12px 25px;
-  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 6px;
   cursor: pointer;
-  border-radius: 8px;
+  font-size: 15px;
   transition: background-color 0.3s ease;
-  display: block;
-  width: 100%;
-  margin-top: 10px;
 }
 
-button:hover,
-input[type="submit"]:hover {
-  background-color: #00509e;
+button:hover, input[type="submit"]:hover {
+  background-color: #0055aa;
 }
 
 /* Responsive Design */
 @media (max-width: 600px) {
   .container {
-    padding: 20px 15px;
+    margin: 20px 10px;
+    padding: 15px;
   }
 
-  .logo-container img {
-    max-width: 120px;
+  nav a {
+    display: block;
+    margin: 10px 0;
   }
+}
+
+/* Image Slider */
+.slider {
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider img {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+.slider img.active {
+  display: block;
+}
+
+/* Login Box */
+.login-box {
+  max-width: 400px;
+  margin: 20px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
 }
