@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLM Retreat Centre - Home</title>
+  <link rel="stylesheet" href="blm_theme.css">
+  <style>
+    .login-container {
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .slider {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      height: 400px;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .slides {
+      display: flex;
+      width: 500%;
+      height: 100%;
+      animation: slideAnimation 25s infinite;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes slideAnimation {
+      0% { transform: translateX(0%); }
+      20% { transform: translateX(0%); }
+      25% { transform: translateX(-100%); }
+      40% { transform: translateX(-100%); }
+      45% { transform: translateX(-200%); }
+      60% { transform: translateX(-200%); }
+      65% { transform: translateX(-300%); }
+      80% { transform: translateX(-300%); }
+      85% { transform: translateX(-400%); }
+      100% { transform: translateX(-400%); }
+    }
+
+    .error-message {
+      color: red;
+      text-align: center;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+ <img src="images/blm-logo.jpg" alt="BLM Retreat Centre Logo" class="logo">
+    <h1>Welcome to BLM Retreat Centre</h1>
+
+    <!-- Image Slider -->
+    <div class="slider">
+      <div class="slides">
+        <img src="images/img1.jpg" alt="Church Image 1">
+        <img src="images/img2.jpg" alt="Church Image 2">
+        <img src="images/img3.jpg" alt="Church Image 3">
+        <img src="images/img4.jpg" alt="Church Image 4">
+        <img src="images/img5.jpg" alt="Church Image 5">
+      </div>
+    </div>
+
+    <!-- Login Form -->
+    <div class="login-container">
+      <h2>Login</h2>
+      <form onsubmit="return validateLogin(event)">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+
+        <div class="error-message" id="error-msg">Invalid login credentials!</div>
+
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function validateLogin(event) {
+      event.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const errorMsg = document.getElementById("error-msg");
+
+      if (username === "admin" && password === "admin@blm2025") {
+        alert("Login successful!");
+        window.location.href = "chapel_form.html"; // Redirect after successful login
+      } else {
+        errorMsg.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>

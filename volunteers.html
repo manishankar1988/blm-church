@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Volunteer Registration - BLM Retreat Centre</title>
+  <link rel="stylesheet" href="blm_theme.css" />
+</head>
+<body>
+ <img src="images/blm-logo.jpg" alt="BLM Retreat Centre Logo" class="logo">
+  <div class="container">
+
+    <h1>Volunteer Registration</h1>
+    <form action="#" method="POST" enctype="multipart/form-data">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
+
+      <label for="photo">Upload Photo:</label>
+      <input type="file" id="photo" name="photo" accept="image/*" />
+
+      <label for="role">Select Role:</label>
+      <select id="role" name="role" required>
+        <option value="">-- Choose a Role --</option>
+        <option value="Manager">Manager</option>
+        <option value="Supervisor">Supervisor</option>
+        <option value="Accountant">Accountant</option>
+        <option value="Kitchen">Kitchen</option>
+        <option value="Cleaners">Workers – Clean</option>
+        <option value="Kanal">Kanal</option>
+        <option value="Sacristian">Sacristian</option>
+        <option value="Organist">Organist</option>
+        <option value="Choir">Choir</option>
+        <option value="Helpers">Helpers</option>
+        <option value="Electrician">Electrician</option>
+        <option value="Civil">Civil</option>
+        <option value="Intercession">Intercession</option>
+      </select>
+
+      <label for="aadhaar">Aadhaar Card Number:</label>
+      <input type="text" id="aadhaar" name="aadhaar" required />
+
+      <label for="contact">Contact Person Name:</label>
+      <input type="text" id="contact" name="contact" required />
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required />
+
+      <label for="bday">Date of Birth:</label>
+      <input type="date" id="bday" name="bday" />
+
+      <label for="wedding">Wedding Day (if any):</label>
+      <input type="date" id="wedding" name="wedding" />
+
+      <label for="insurance">Insurance:</label>
+      <select id="insurance" name="insurance">
+        <option value="">-- Select --</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</body>
+</html>

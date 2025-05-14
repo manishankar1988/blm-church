@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BLM Retreat Center - Employee Registration</title>
+  <link rel="stylesheet" href="blm_theme.css" />
+</head>
+<body>
+  <div class="container">
+  <img src="images/blm-logo.jpg" alt="BLM Retreat Centre Logo" class="logo">
+    <h1>BLM Retreat Center</h1>
+    <h2>Employee Registration Form</h2>
+
+    <form id="employeeForm">
+      <label>Name: <input type="text" name="name" required></label>
+      <label>Role: <input type="text" name="role" required></label>
+      <label>Date of Joining: <input type="date" name="dateOfJoining" required></label>
+      <label>Address: <input type="text" name="address"></label>
+      <label>Contact Person: <input type="text" name="contactPerson"></label>
+      <label>Birthday: <input type="date" name="birthday"></label>
+      <label>Wedding Date: <input type="date" name="weddingDate"></label>
+      <label>Special Date: <input type="date" name="specialDate"></label>
+      <label>Insurance: <input type="text" name="insurance"></label>
+      <label>Insurance Year: <input type="text" name="insuranceYear"></label>
+      <label>Salary: <input type="text" name="salary"></label>
+      <label>Aadhar Number: <input type="text" name="aadhar"></label>
+      <label>PAN Card: <input type="text" name="pancard"></label>
+      <label>Photo (URL): <input type="text" name="photo"></label>
+      <label>Special Note: <textarea name="specialNote" rows="4"></textarea></label>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('employeeForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const formData = Object.fromEntries(new FormData(this).entries());
+      const response = await fetch('http://localhost:3000/api/employees', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        alert('Employee registered successfully!');
+        this.reset();
+      } else {
+        alert('Error occurred while saving!');
+      }
+    });
+  </script>
+</body>
+</html>

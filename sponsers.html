@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BLM Retreat Centre - Sponsors</title>
+  <link rel="stylesheet" href="blm_theme.css" />
+</head>
+<body>
+  <div class="form-container">
+ <img src="images/blm-logo.jpg" alt="BLM Retreat Centre Logo" class="logo">
+    <h1>BLM Retreat Centre - Sponsor Details</h1>
+
+    <form>
+      <label for="name">Sponsor Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" required />
+
+      <label for="contact">Email / Mobile / WhatsApp:</label>
+      <input type="text" id="contact" name="contact" required />
+
+      <label for="bday">Birthday:</label>
+      <input type="date" id="bday" name="bday" />
+
+      <label for="wedding">Wedding Day:</label>
+      <input type="date" id="wedding" name="wedding" />
+
+      <label for="prayerDay">Special Day for Prayer:</label>
+      <input type="text" id="prayerDay" name="prayerDay" />
+
+      <label for="donationFrequency">Donation Frequency:</label>
+      <select id="donationFrequency" name="donationFrequency">
+        <option value="">-- Select --</option>
+        <option value="weekly">Weekly</option>
+        <option value="monthly">Monthly</option>
+        <option value="yearly">Yearly</option>
+      </select>
+
+      <label for="amount">Amount (₹):</label>
+      <input type="number" id="amount" name="amount" />
+
+      <label for="items">Sponsoring Items:</label>
+      <input type="text" id="items" name="items" placeholder="e.g., Chapel, Room, Cross, Altar, etc." />
+
+      <label for="receiptNo">Receipt No:</label>
+      <input type="text" id="receiptNo" name="receiptNo" />
+
+      <label for="chequeNo">Cheque No:</label>
+      <input type="text" id="chequeNo" name="chequeNo" />
+
+      <label>Cash Type:</label>
+      <select id="cashType" name="cashType">
+        <option value="">-- Select --</option>
+        <option value="weekly">Weekly Cash</option>
+        <option value="monthly">Monthly Cash</option>
+        <option value="yearly">Yearly Cash</option>
+      </select>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

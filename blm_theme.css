@@ -1,0 +1,110 @@
+/* BLM Retreat Centre - Common Theme CSS */
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Body Styling */
+body {
+  background-color: #f5f7fa;
+  color: #003366;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Logo */
+.logo-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.logo-container img {
+  max-width: 160px;
+  height: auto;
+}
+
+/* Main Form Container */
+.container {
+  max-width: 600px;
+  background: #ffffff;
+  margin: 0 auto;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Form Headings */
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #003366;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="file"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #00509e;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 80, 158, 0.3);
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #003366;
+}
+
+/* Buttons */
+button,
+input[type="submit"] {
+  background-color: #003366;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: #00509e;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px 15px;
+  }
+
+  .logo-container img {
+    max-width: 120px;
+  }
+}

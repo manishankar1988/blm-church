@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Priest Registration - BLM Retreat Centre</title>
+  <link rel="stylesheet" href="blm_theme.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+
+  <div class="container">
+     <img src="images/blm-logo.jpg" alt="BLM Retreat Centre Logo" class="logo">
+
+    <div class="header">Priest Registration</div>
+
+    <form action="submit_priest.php" method="POST" enctype="multipart/form-data">
+      
+      <div>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div>
+        <label for="address">Address</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+      </div>
+
+      <div>
+        <label for="aadhaar">Aadhaar Number</label>
+        <input type="text" id="aadhaar" name="aadhaar" maxlength="12" required>
+      </div>
+
+      <div>
+        <label for="appointment_letter">Upload Appointment Letter (PDF)</label>
+        <input type="file" id="appointment_letter" name="appointment_letter" accept=".pdf" required>
+      </div>
+
+      <div>
+        <label for="honorarium">Honorarium (₹)</label>
+        <input type="number" id="honorarium" name="honorarium" step="0.01" min="0" required>
+      </div>
+
+      <button type="submit" class="btn-primary">Register</button>
+    </form>
+  </div>
+
+</body>
+</html>

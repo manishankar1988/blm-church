@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chapel Details Entry - BLM Retreat Centre</title>
+  <link rel="stylesheet" href="blm_theme.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h1>BLM Retreat Centre - Chapel Details</h1>
+
+  <img src="images/blm-logo.jpg" alt="BLM Retreat Centre Logo" class="logo">
+
+    <form>
+      <label for="chapelName">Select Chapel:</label>
+      <select id="chapelName" name="chapelName" required>
+        <option value="">-- Select a Chapel --</option>
+        <option value="stJoseph">St. Joseph</option>
+        <option value="stMariyam">St. Mariyam (Theres)</option>
+        <option value="mainChapel">Main Chapel</option>
+        <option value="schoenstatt">Schoenstatt</option>
+      </select>
+
+      <label for="incharge">Incharge Name:</label>
+      <input type="text" id="incharge" name="incharge" placeholder="Enter name of incharge" required />
+
+      <label for="prayers">Prayers Offered:</label>
+      <input type="text" id="prayers" name="prayers" placeholder="e.g., Rosary, Mass, Novena" required />
+
+      <label for="timings">Timings:</label>
+      <input type="text" id="timings" name="timings" placeholder="e.g., 6 AM - 7 AM" required />
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
